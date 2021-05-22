@@ -986,6 +986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SerialController
       objectReference: {fileID: 0}
+    - target: {fileID: 128384, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 405068, guid: a65acf0cbf56b80419f74ebf0bc845f4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1590,6 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeadTime: 1
+  InstantiateObj: {fileID: 0}
 --- !u!114 &1047830745
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class destroyObj : MonoBehaviour
 {
     public float DeadTime;
+    public GameObject InstantiateObj;
     private float times = 0;
     void Start()
     {
@@ -15,6 +16,9 @@ public class destroyObj : MonoBehaviour
     {
         times+=Time.deltaTime;
         if (times > DeadTime){
+            if (InstantiateObj){
+                Instantiate(InstantiateObj);
+            }
             Destroy(gameObject);
         }
     }
