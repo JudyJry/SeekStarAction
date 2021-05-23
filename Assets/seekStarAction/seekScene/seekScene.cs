@@ -39,19 +39,26 @@ public class seekScene : MonoBehaviour
         }
     }
 
-    public void btnPressed(int i){
+    public void btnPressed(int i)
+    {
         btnInt[i] = -1;
     }
 
-    public void ledLight(int i){
-        serialSend.serialController.SendSerialMessage("L,"+i);
+    public void ledLight(int i)
+    {
+        if (serialSend.gameObject.activeSelf)
+        {
+            serialSend.serialController.SendSerialMessage("L," + i);
+        }
     }
 
-    public void startPlayMovie(int i, int j){
+    public void startPlayMovie(int i, int j)
+    {
         StartCoroutine(playMovie(i, j));
     }
 
-    public void canPressButton(bool canPress){
+    public void canPressButton(bool canPress)
+    {
         serialSend.canPress = canPress;
     }
 
@@ -59,7 +66,7 @@ public class seekScene : MonoBehaviour
     {
         canPressButton(false);
         rocket_anim.SetInteger(p, j);
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.5f);
         Instantiate(Transitions);
         yield return new WaitForSeconds(1f);
         rocket_anim.SetBool("a", true);

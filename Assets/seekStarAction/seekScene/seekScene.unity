@@ -1133,6 +1133,7 @@ GameObject:
   - component: {fileID: 663176301}
   - component: {fileID: 663176302}
   - component: {fileID: 663176303}
+  - component: {fileID: 663176304}
   m_Layer: 0
   m_Name: rplight
   m_TagString: Untagged
@@ -1198,6 +1199,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trans: {fileID: 8420660805283339231, guid: beb07f3504927584c86124e04444ddda, type: 3}
   scene: seasonsScene
+--- !u!114 &663176304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663176300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48eb5a651d3ac1d4f977456ccb24569a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &700278378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,7 +2859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1961471695
 MonoBehaviour:
   m_ObjectHideFlags: 0
