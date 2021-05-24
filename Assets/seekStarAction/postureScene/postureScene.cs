@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class postureScene : MonoBehaviour
 {
-    public GameObject homepageObj;
+    public GameObject postureSceneObj;
     public GameObject startTransitions;
     public GameObject startMovie;
     public bool start = false;
@@ -30,7 +30,7 @@ public class postureScene : MonoBehaviour
             if (times > 1)
             {
                 startMovie.SetActive(true);
-                homepageObj.SetActive(false);
+                postureSceneObj.SetActive(false);
             }
             else if (times > 2)
             {

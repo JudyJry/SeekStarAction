@@ -17,7 +17,7 @@ public class movieEnd : MonoBehaviour
     void Update()
     {
         if(vp.time >= vp.clip.length - 1){
-            ss.hpObj.SetActive(true);
+            ss.ssObj.SetActive(true);
             ss.rocket_anim.SetBool("a",false);
             vp.targetCameraAlpha -= 1 * Time.deltaTime;
             ss.canPressButton(true);

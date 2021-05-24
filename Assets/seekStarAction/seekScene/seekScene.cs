@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class seekScene : MonoBehaviour
 {
-    public GameObject hpObj, rocket;
+    public GameObject ssObj, rocket;
     public GameObject Transitions;
     public serialSend serialSend;
     public Animator rocket_anim;
@@ -75,6 +75,6 @@ public class seekScene : MonoBehaviour
         Instantiate(movie[i]);
         rocket_anim.SetInteger(p, j + 1);
         Debug.Log("play movie P" + i);
-        hpObj.SetActive(false);
+        ssObj.SetActive(false);
     }
 }
