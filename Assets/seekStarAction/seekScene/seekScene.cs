@@ -66,7 +66,9 @@ public class seekScene : MonoBehaviour
     {
         canPressButton(false);
         rocket_anim.SetInteger(p, j);
-        yield return new WaitForSeconds(1.5f);
+        float WFS = 5f;
+        if (i > 1) { WFS = 5.5f; }
+        yield return new WaitForSeconds(WFS);
         Instantiate(Transitions);
         yield return new WaitForSeconds(1f);
         rocket_anim.SetBool("a", true);
