@@ -39,6 +39,10 @@ public class stellar_rotate : MonoBehaviour
         }
     }
 
+    public void SelectMainBool(bool b){
+        SelectMain_bool = b;
+    }
+
     void Update()
     {
         SetDistance();

@@ -13,6 +13,6 @@ public class getMseeageListener : MonoBehaviour
 
     void Update()
     {
-        
+        if (!serialController.messageListener) serialController.messageListener = GameObject.FindGameObjectWithTag("MessageListener");
     }
 }

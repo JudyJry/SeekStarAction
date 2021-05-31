@@ -598,16 +598,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c477eda707366b74cbcc9334309d1178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  manager: {fileID: 2121961301}
   debugText: {fileID: 98059601}
   flip: 0
   deviation: 10
   isGestureTrue: 0
   UserOrientation: {x: 0, y: 0, z: 0, w: 0}
-  JointPosition: []
-  JointLocalPosition: []
-  JointOrientation: []
-  JointLocalOrientation: []
   ElbowToShoulder_L: {x: 0, y: 0, z: 0}
   ElbowToWrist_L: {x: 0, y: 0, z: 0}
   ElbowToShoulder_R: {x: 0, y: 0, z: 0}

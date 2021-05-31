@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TestGesture : MonoBehaviour
 {
     public KinectManager manager;
+    public stellar_rotate stellar;
     public Text debugText;
     public bool flip = false;
     public float deviation = 10;
@@ -13,10 +14,10 @@ public class TestGesture : MonoBehaviour
 
     [HeaderAttribute("Gesture Value")]
     public Quaternion UserOrientation;
-    public Vector3[] JointPosition;
-    public Vector3[] JointLocalPosition;
-    public Quaternion[] JointOrientation;
-    public Quaternion[] JointLocalOrientation;
+    //public Vector3[] JointPosition;
+    //public Vector3[] JointLocalPosition;
+    //public Quaternion[] JointOrientation;
+    //public Quaternion[] JointLocalOrientation;
     //手臂
     public Vector3 ElbowToShoulder_L, ElbowToWrist_L;
     public Vector3 ElbowToShoulder_R, ElbowToWrist_R;
@@ -48,7 +49,7 @@ public class TestGesture : MonoBehaviour
 
     void Start()
     {
-        manager = GameObject.FindObjectOfType<Camera>().GetComponent<KinectManager>();
+        manager = GameObject.FindGameObjectWithTag("kinectManager").GetComponent<KinectManager>();
     }
 
     void Update()
@@ -61,6 +62,7 @@ public class TestGesture : MonoBehaviour
         if (times > 1)
         {
             times = 0;
+            getUserGestureValue();
             checkGestureForValue();
         }
     }
@@ -109,7 +111,7 @@ public class TestGesture : MonoBehaviour
                 AngleBetweenJoints.Add(Vector3.Angle(DirectionBetweenJoints[i], DirectionBetweenJoints[i + 1]));
             }
 
-            Debug.Log("Get Gesture Value Complete.");
+            //Debug.Log("Get Gesture Value Complete.");
         }
     }
 
@@ -154,14 +156,15 @@ public class TestGesture : MonoBehaviour
 
             if (isGestureTrue)
             {
-                if(debugText)
-                debugText.text = "GestureTrue : "+gesture;
+                if (debugText)
+                    debugText.text = "GestureTrue : " + gesture;
                 Debug.Log("GestureTrue");
+                stellar.SelectMainBool(true);
             }
             else
             {
-                if(debugText)
-                debugText.text = "";
+                if (debugText)
+                    debugText.text = "";
                 Debug.Log("GestureFalse");
             }
         }
@@ -169,6 +172,7 @@ public class TestGesture : MonoBehaviour
 
     private void checkGesture(List<float> angle, float y)
     {
+        if (angle[0] == 0 && angle[1] == 0 && angle[2] == 0 && angle[3] == 0) { isGestureTrue = false; return; }
         switch (gesture)
         {
             case (Gesture.Aquarius):
@@ -176,7 +180,8 @@ public class TestGesture : MonoBehaviour
                 for (int i = 0; i < angle.Count - 2; i++)
                 {
                     float _deviation = Mathf.Abs(angle[i] - gAngleAquarius[i]);
-                    if (_deviation < deviation)
+                    if (angle[i] == 0) isGestureTrue = true;
+                    else if (_deviation < deviation)
                     {
                         isGestureTrue = true;
                     }
@@ -192,7 +197,8 @@ public class TestGesture : MonoBehaviour
                 for (int i = 0; i < angle.Count; i++)
                 {
                     float _deviation = Mathf.Abs(angle[i] - gAngleTaurus[i]);
-                    if (_deviation < deviation)
+                    if (angle[i] == 0) isGestureTrue = true;
+                    else if (_deviation < deviation)
                     {
                         isGestureTrue = true;
                     }
@@ -208,7 +214,8 @@ public class TestGesture : MonoBehaviour
                 for (int i = 0; i < angle.Count - 2; i++)
                 {
                     float _deviation = Mathf.Abs(angle[i] - gAngleCancer[i]);
-                    if (_deviation < deviation)
+                    if (angle[i] == 0) isGestureTrue = true;
+                    else if (_deviation < deviation)
                     {
                         isGestureTrue = true;
                     }
